@@ -1,0 +1,3 @@
+guard :relaunch, command: "rackup" do
+  watch "dir"
+end
