@@ -30,5 +30,5 @@ guard :relaunch, command: "rackup -p 3000", watch: /\.rb/
 custom relaunch, define a kill command
 
 ``` ruby
-guard :relaunch, command: "rackup -p 3000", kill_command: "", watch: /\.rb/
+guard :relaunch, command: "rackup -p 3000", kill_command: "sudo killall -9 rackup", watch: /\.rb/
 ```
