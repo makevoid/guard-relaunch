@@ -21,8 +21,14 @@ And then add a basic setup to your Guardfile:
 
 ## Usage
 
+normal relaunch, kills the pid
 
 ``` ruby
-# This will concatenate the javascript files a.js and b.js in public/js to all.js
-guard :relaunch, command: "rackup"
+guard :relaunch, command: "rackup -p 3000", watch: /\.rb/
+```
+
+custom relaunch, define a kill command
+
+``` ruby
+guard :relaunch, command: "rackup -p 3000", kill_command: "", watch: /\.rb/
 ```
