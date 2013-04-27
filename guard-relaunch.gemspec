@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email        = "makevoid@gmail.com"
   s.summary      = "Guard gem for relaunching processes"
   s.homepage     = "http://github.com/makevoid/guard-relaunch"
-  s.version      = Guard::Concat::VERSION
+  s.version      = Guard::Relaunch::VERSION
 
   s.description  = <<-DESC
     Guard::Relaunch automatically manages processes, killing and relaunching them.
