@@ -1,3 +1,5 @@
-guard :relaunch, command: "rackup" do
-  watch "dir"
-end
+# normal relaunch, kills the pid
+# guard :relaunch, command: "rackup -p 3000", watch: /\.rb/
+
+# custom relaunch, define a kill command
+guard :relaunch, command: "rackup -p 3000", kill_command: "", watch: /\.rb/
