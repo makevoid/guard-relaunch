@@ -39,18 +39,11 @@ module Guard
 
     def kill
       Process.kill "KILL", @pid
-
-      begin
-        Process.getpgid @pid
-      rescue Errno::ESRCH
-        # ok, killed
-      else
-        sleep 0.1
-        kill
-      end
+      Process.wait @pid
     end
 
     # custom killing mode (you need to specify a :kill_command)
+    # TODO: provide a check parameter (to see if the process is killed or not)
 
     def kill_custom
       `#{@kill_command}`
