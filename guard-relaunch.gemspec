@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
     Guard::Relaunch automatically manages processes, killing and relaunching them.
   DESC
 
-  s.add_dependency 'guard', '>= 1.8.0'
+  s.add_runtime_dependency 'guard', '~> 2.7', '>= 2.7.3'
 
   s.files        = %w(Readme.md LICENSE)
   s.files       += Dir["{lib}/**/*"]

@@ -1,13 +1,13 @@
 require 'guard'
-require 'guard/guard'
+require 'guard/plugin'
 require 'guard/watcher'
 
 module Guard
-  class Relaunch < Guard
+  class Relaunch < Plugin
 
-    VERSION = '0.0.1'
+    VERSION = '0.1.0'
 
-    def initialize(watchers=[], opts={})
+    def initialize(opts={})
       @command      = opts[:command]
       @kill_command = opts[:kill_command]
       @to_watch     = opts[:watch]
@@ -16,9 +16,9 @@ module Guard
       spawn
 
       watcher = ::Guard::Watcher.new @to_watch
-      watchers << watcher
-      @watchers, @opts = watchers, opts
-      super watchers, opts
+      opts[:watchers] << watcher
+      @watchers, @opts = opts[:watchers], opts
+      super
     end
 
     # main method: do the relaunch
